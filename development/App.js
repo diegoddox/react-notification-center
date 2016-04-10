@@ -6,8 +6,6 @@ import moment from 'moment';
 import uiid from 'uuid';
 import ReactNotificationCenter, {notify} from './../src/';
 
-// const customItemComponentTest = props => <div>{props.text}</div>;
-
 export default class App extends Component {
     static displayName = 'ReactNotificationDevApp';
 
@@ -72,29 +70,20 @@ export default class App extends Component {
             }
         ];
 
-        this.state = {
-            notifications: this.notifications
-        };
-
         this.fetchData = this.fetchData.bind(this);
     }
 
     addnotification(tagType) {
-        this.setState({
-            notifications: [
-                {
-                    __id: uiid.v1(),
-                    title: loremIpsum({count: 1}),
-                    text: loremIpsum({count: 6}),
-                    active: false,
-                    tags: [{
-                        type: tagType ? tagType : 'info',
-                        text: loremIpsum({count: 1, units: 'words'})
-                    }],
-                    startDate: moment().format('LLL')
-                },
-                ...this.state.notifications
-            ]
+        notify.add({
+            __id: uiid.v1(),
+            title: loremIpsum({count: 1}),
+            text: loremIpsum({count: 6}),
+            active: false,
+            tags: [{
+                type: tagType ? tagType : 'info',
+                text: loremIpsum({count: 1, units: 'words'})
+            }],
+            startDate: moment().format('LLL')
         });
     }
 
@@ -118,7 +107,7 @@ export default class App extends Component {
                     <div className="menu">
                         <div className="app-notification">
                             <ReactNotificationCenter
-                                notifications={this.state.notifications}
+                                notifications={this.notifications}
                                 fetch={this.fetchData}
                                 onNotificatioOpen={() => console.log('Notification has open')}
                                 onNotificatioClose={() => console.log('Notification has close')}
@@ -128,7 +117,7 @@ export default class App extends Component {
                         <button
                             type="button"
                             className="link first"
-                            onClick={this.addnotification.bind(this, 'error')}>
+                            onClick={this.addnotification.bind(this, 'danger')}>
                             Add notification
                         </button>
                         <button
@@ -141,7 +130,6 @@ export default class App extends Component {
                         <div className="avatar"></div>
                         <div className="box"></div>
                         <div className="box second"></div>
-
                         <div className="line"></div>
                         <div className="line small"></div>
                         <div className="line large"></div>
