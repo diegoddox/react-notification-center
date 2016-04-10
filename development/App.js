@@ -41,6 +41,12 @@ export default class App extends Component {
                 tags: [{
                     type: 'info',
                     text: loremIpsum({count: 1, units: 'words'})
+                }, {
+                    type: 'warning',
+                    text: loremIpsum({count: 1, units: 'words'})
+                }, {
+                    type: 'danger',
+                    text: loremIpsum({count: 1, units: 'words'})
                 }],
                 startDate: moment().format('LLL')
             }, {
