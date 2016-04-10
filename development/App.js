@@ -1,10 +1,10 @@
 import './index.less';
-import './notification/less/index.less';
+import './../src/less/index.less';
 import React, {Component} from 'react';
 import loremIpsum from 'lorem-ipsum';
 import moment from 'moment';
 import uiid from 'uuid';
-import ReactNotification, {notify} from './notification/';
+import ReactNotification, {notify} from './../src/';
 
 // const customItemComponentTest = props => <div>{props.text}</div>;
 

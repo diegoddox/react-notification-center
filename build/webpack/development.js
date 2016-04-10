@@ -7,7 +7,7 @@ var baseConfig = require('./base');
 baseConfig.entry.app = [
   'webpack-dev-server/client?http://localhost:' + config.server_port,
   'webpack/hot/only-dev-server',
-  config.path_base + '/src/client.js'
+  config.path_base + '/' + config.dir_client + '/client.js'
 ];
 
 baseConfig.devtool = 'inline-source-map';
