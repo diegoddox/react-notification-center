@@ -28,19 +28,40 @@ export default class App extends Component {
                 title: loremIpsum({count: 1}),
                 text: loremIpsum({count: 3}),
                 active: false,
-                tags: [
-                    {
-                        type: 'success',
-                        text: loremIpsum({count: 1, units: 'words'})
-                    }
-                ],
+                tags: [{
+                    type: 'success',
+                    text: loremIpsum({count: 1, units: 'words'})
+                }],
                 startDate: moment().format('LLL')
             }, {
                 __id: uiid.v1(),
                 title: loremIpsum({count: 1}),
                 text: loremIpsum({count: 6}),
                 active: false,
-                tags: [],
+                tags: [{
+                    type: 'info',
+                    text: loremIpsum({count: 1, units: 'words'})
+                }],
+                startDate: moment().format('LLL')
+            }, {
+                __id: uiid.v1(),
+                title: loremIpsum({count: 1}),
+                text: loremIpsum({count: 6}),
+                active: false,
+                tags: [{
+                    type: 'warning',
+                    text: loremIpsum({count: 1, units: 'words'})
+                }],
+                startDate: moment().format('LLL')
+            }, {
+                __id: uiid.v1(),
+                title: loremIpsum({count: 1}),
+                text: loremIpsum({count: 6}),
+                active: false,
+                tags: [{
+                    type: 'danger',
+                    text: loremIpsum({count: 1, units: 'words'})
+                }],
                 startDate: moment().format('LLL')
             }
         ];
