@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import loremIpsum from 'lorem-ipsum';
 import moment from 'moment';
 import uiid from 'uuid';
-import ReactNotification, {notify} from './../src/';
+import ReactNotificationCenter, {notify} from './../src/';
 
 // const customItemComponentTest = props => <div>{props.text}</div>;
 
@@ -117,7 +117,7 @@ export default class App extends Component {
                     </div>
                     <div className="menu">
                         <div className="app-notification">
-                            <ReactNotification
+                            <ReactNotificationCenter
                                 notifications={this.state.notifications}
                                 fetch={this.fetchData}
                                 onNotificatioOpen={() => console.log('Notification has open')}

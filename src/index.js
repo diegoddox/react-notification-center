@@ -1,5 +1,5 @@
-import ReactNotification from './ReactNotification';
+import ReactNotificationCenter from './ReactNotification';
 import {EEmitter} from './emitter';
 
-export default ReactNotification;
+export default ReactNotificationCenter;
 export const notify = EEmitter;
