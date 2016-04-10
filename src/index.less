@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+#app {
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+
+.fake-app {
+    width: 500px;
+    height: 400px;
+    top: 12%;
+    left: 50px;
+    position: absolute;
+    
+    .demo-icon-info {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top: -60px;
+        left: 0px;
+        
+        .app-icon {
+            width: 90px;
+            height: 100%;
+            float: left;
+            margin-left: 30px;
+            margin-right: 10px;
+            position: relative;
+            
+            .no-length {
+                width: 30px;
+                text-align: center;
+                position: absolute;
+                top: 10px;
+                left: 54px;
+                color: white;
+                font-size: 1.2em;
+            }
+            img {
+                width: 100%;
+            }   
+        }
+        
+        .description {
+            width: 320px;
+            height: 100%;
+            color: #666;
+            font-size: 14px;
+            float: left;
+            padding: 10px;
+        }
+    }
+    
+    .menu {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid #dbdbdb;
+        position: relative;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        
+        .app-notification {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            
+            .react-redux-notification {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+            }
+        }
+        
+        .link-first, .link {
+            display: block;
+            height: 25px;
+            background-color: #ccc;
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 4px;
+            border: none;
+            padding: 5px 20px;
+            color: #999;
+            outline: none;
+            
+            &:hover {
+                color: white;
+                cursor: pointer;
+            }
+            
+            &.first {
+                margin-left: 60px;
+            }
+        }
+    }
+    
+    .content {
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+        border-left: 1px solid #dbdbdb;
+        overflow: hidden;
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px solid #dbdbdb;
+            float: left;
+            background-color: #fcfcfc;
+        }
+        
+        .box {
+            width: 100px;
+            height: 80px;
+            border: 1px solid #dbdbdb;
+            border-radius: 2px;
+            float: left;
+            margin-left: 20px;
+            
+            &.second {
+                width: 200px;
+            }
+        }
+        
+        .line {
+            width: 380px;
+            height: 20px;
+            float: left;
+            margin-top: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #dbdbdb;
+            clear: both;
+            border-radius: 2px;
+            
+            &.small {
+                width: 200px;
+            }
+            
+            &.medium {
+                width: 300px;
+            }
+            
+            &.large {
+                width: 400px;
+            }
+        }
+    }
+}
