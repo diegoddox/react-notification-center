@@ -1,6 +1,6 @@
 {
   "name": "react-notification-center",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "react-notification-center keep all your notification in a single place",
   "main": "lib/index.js",
   "jsnext:main": "./src/notification/index.js",
@@ -8,8 +8,8 @@
     "start": "better-npm-run dev-server",
     "build:w": "better-npm-run build:w",
     "build": "better-npm-run build",
-    "less": "node_modules/.bin/lessc src/notification/less/index.less --autoprefix=\"last 2 versions\" lib/css/react-redux-notification.css",
-    "less:m": "node_modules/.bin/lessc src/notification/less/index.less --autoprefix=\"last 2 versions\" --clean-css lib/css/react-redux-notification.min.css",
+    "less": "node_modules/.bin/lessc src/less/index.less --autoprefix=\"last 2 versions\" lib/css/react-redux-notification.css",
+    "less:m": "node_modules/.bin/lessc src/less/index.less --autoprefix=\"last 2 versions\" --clean-css lib/css/react-redux-notification.min.css",
     "clean": "better-npm-run clean",
     "lint": "better-npm-run lint",
     "build_app": "concurrent --kill-others & npm run clean & npm run lint & npm run build & npm run less & npm run less:m",
@@ -33,10 +33,10 @@
       }
     },
     "build": {
-      "command": "node_modules/.bin/babel src/notification/ --out-dir lib"
+      "command": "node_modules/.bin/babel src/ --out-dir lib"
     },
     "build:w": {
-      "command": "node_modules/.bin/babel -w src/notification/ --out-dir lib"
+      "command": "node_modules/.bin/babel -w src/ --out-dir lib"
     },
     "lint": {
       "command": "node_modules/.bin/eslint . --ext .js --ext .jsx || true"

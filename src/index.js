@@ -1,4 +1,4 @@
-import ReactNotificationCenter from './ReactNotification';
+import ReactNotificationCenter from './NotificationCenter';
 import {EEmitter} from './emitter';
 
 export default ReactNotificationCenter;

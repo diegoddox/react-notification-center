@@ -13,7 +13,7 @@ documentation coming soon.
 
 before we keep on we need to talk about the notification data structure.
 
-The `notification item component` expect an `id`, `title`, `message`, `read` and `date`, but assuming that in your data you don't have the `message` variable but instead you have `text` as the notification message and you're too lazy to manipulate your data, here is what you can do use the `mapToItem` props
+The `notification item component` expect an `id`, `title`, `message`, `read` and `date`, but assuming that in your data you don't have the `message` variable but instead you have `text` as the notification message and you're too lazy to manipulate your data, here is what you can do, use the `mapToItem` `props`
 
 ```
 import ReactNotificationCenter, {notify} from 'react-notification-center';
@@ -60,15 +60,20 @@ export default class App extends Component {
     render() {
         return (
             <div className="wrapper">
+                <div className="your-notification-holder">
 	             <ReactNotificationCenter
 	                 notifications={this.notifications}
 	                 onNotificatioOpen={() => console.log('Notification has open')}
 	                 onNotificatioClose={() => console.log('Notification has close')}
 	                 onItemClick={this.onNotificationItemClick.bind(this)}
 	                 mapToItem={this.mpaToNotificationItem}/>
+               </div>
             </div>
         );
     }
 }
 ```
 That is it :D
+
+### TODO:
+improve the documentation.
