@@ -1,4 +1,6 @@
-# `react-notification-center` [demo](http://diegoddox.github.io/react-notification-center/)
+## NOTE:
+This is not well documented but it will give you an idea on how to start
+#### `react-notification-center` [demo](http://diegoddox.github.io/react-notification-center/)
 
 #### Implementation Guide
 
@@ -36,7 +38,7 @@ export default class App extends Component {
             active: false,
             tags: [{
                 type: 'success',
-                text: loremIpsum({count: 1, units: 'words'})
+                text: 'text'
             }],
             startDate: '09/12/2016'
         }];
@@ -49,7 +51,7 @@ export default class App extends Component {
 	}
     
     addMoreData() {
-        /* In case you wanna more data without modifying
+        /* In case you wanna add more data without modifying
          * your react component state you case use the 'notify'
          * method to add more data in to the `react-notification-center` `state`
 		 */
@@ -81,7 +83,11 @@ That is it :D
     title: 'the notification title', // not required
     message: 'My message', // you don't need but what is a notification without a message :D
     read: false, // is required, We will use this for mark which item has been read,
-    date: '02/12/2016' // not required
+    date: '02/12/2016', // not required
+    tags: [{ // not required. This is in case you wanna tell the user the notification purpose
+        type: 'info', // types of tags: success, info, warning and danger
+        text: 'my tag text'
+    }]
 }
 ```
 
