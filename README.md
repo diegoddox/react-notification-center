@@ -1,5 +1,4 @@
 # `react-notification-center` [demo](http://diegoddox.github.io/react-notification-center/)
-documentation coming soon.
 
 #### Implementation Guide
 
@@ -60,7 +59,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="wrapper">
-                <div className="your-notification-holder">
+                <div className="your-notification-holder-class">
 	             <ReactNotificationCenter
 	                 notifications={this.notifications}
 	                 onNotificatioOpen={() => console.log('Notification has open')}
@@ -74,6 +73,18 @@ export default class App extends Component {
 }
 ```
 That is it :D
+
+#### Data structure.
+```
+{
+    id: 1 // is required,
+    title: 'the notification title', // not required
+    message: 'My message', // you don't need but what is a notification without a message :D
+    read: false, // is required, We will use this for mark which item has been read,
+    date: '02/12/2016' // not required
+}
+```
+
 
 ### TODO:
 improve the documentation.
