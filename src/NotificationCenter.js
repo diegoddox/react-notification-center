@@ -26,7 +26,7 @@ export default class ReduxModal extends Component {
     };
 
     static defaultProps = {
-        notificationTitle: 'React notifications center',
+        notificationTitle: 'React notification center',
         position: 'left',
         wordsInItem: 50,
         visible: true,

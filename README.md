@@ -64,6 +64,7 @@ export default class App extends Component {
                 <div className="your-notification-holder-class">
 	             <ReactNotificationCenter
 	                 notifications={this.notifications}
+                     notificationTitle={'Header title'}
 	                 onNotificatioOpen={() => console.log('Notification has open')}
 	                 onNotificatioClose={() => console.log('Notification has close')}
 	                 onItemClick={this.onNotificationItemClick.bind(this)}
