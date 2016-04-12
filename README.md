@@ -87,11 +87,12 @@ Sorry but you cannot map `tags` at the moment :(
 #### You still don't get it `o.O`
 In case I fail to explain you on how to set up in your project!
 
-`clone the repo`
-`git clone https://github.com/diegoddox/react-notification-center.git`
-`cd react-notification-center`
-`npm i` or `npm install`
-`npm start`
+```
+git clone https://github.com/diegoddox/react-notification-center.git 
+cd react-notification-center
+npm install
+npm start
+```
 
 and take a look at the file `developement/App.js`
 
