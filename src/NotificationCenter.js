@@ -18,18 +18,15 @@ export default class ReduxModal extends Component {
         onNotificatioOpen: PropTypes.func,
         onNotificatioClose: PropTypes.func,
         onScrollBottom: PropTypes.func,
-        fetch: PropTypes.func,
         position: PropTypes.string,
         wordsInItem: PropTypes.number,
-        noNotificationText: PropTypes.string,
-        visible: PropTypes.bool
+        noNotificationText: PropTypes.string
     };
 
     static defaultProps = {
         notificationTitle: 'React notification center',
         position: 'left',
         wordsInItem: 50,
-        visible: true,
         noNotificationText: 'No data available, enjoy your day',
         mapToItem: {},
         notifications: []

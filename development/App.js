@@ -14,7 +14,6 @@ export default class App extends Component {
 
         this.notificationOptions = {
             id: '__id',
-            title: 'title',
             message: 'text',
             read: 'active',
             date: 'startDate'
@@ -87,10 +86,6 @@ export default class App extends Component {
         });
     }
 
-    fetchData() {
-        notify.add();
-    }
-
     render() {
         return (
             <div className="wrapper">
@@ -108,7 +103,6 @@ export default class App extends Component {
                         <div className="app-notification">
                             <ReactNotificationCenter
                                 notifications={this.notifications}
-                                fetch={this.fetchData}
                                 onNotificatioOpen={() => console.log('Notification has open')}
                                 onNotificatioClose={() => console.log('Notification has close')}
                                 onItemClick={() => console.log('The item has been clicked')}
