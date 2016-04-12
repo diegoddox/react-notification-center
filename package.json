@@ -1,6 +1,6 @@
 {
   "name": "react-notification-center",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "react-notification-center keep all your notification in a single place",
   "main": "lib/index.js",
   "jsnext:main": "./src/notification/index.js",
