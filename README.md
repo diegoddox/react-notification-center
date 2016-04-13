@@ -50,6 +50,7 @@ export default class App extends Component {
                      notificationTitle={'React notification center'}
                      noNotificationText={'No notifications. Go home!'}
                      onScrollBottom={() => console.log('You are on the bottom babay :D')}
+                     onScroll={() => console.log('You are scrolling on the list')}
                      onItemClick={item => console.log('## item clicked', item)}
                      onNotificatioOpen={items => console.log('## all notifications', items)}
                      onNotificatioClose={items => console.log('## all notifications', items)}
