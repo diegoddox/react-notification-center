@@ -54,6 +54,7 @@ export default class App extends Component {
                      onItemClick={item => console.log('## item clicked', item)}
                      onNotificatioOpen={items => console.log('## all notifications', items)}
                      onNotificatioClose={items => console.log('## all notifications', items)}
+                     onScroll={e => console.log('You are scrolling', e)}
                      customItemComponent={ReactComponent} // In case you don't wanna use the default item component
                </div>
             </div>
