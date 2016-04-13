@@ -12,7 +12,7 @@ This is not well documented but it will give you an idea on how to start
 
 #### 3 Add the notification component
 ```
-import ReactNotificationCenter, {notify} from 'react-notification-center';
+import ReactNotificationCenter from 'react-notification-center';
 
 export default class App extends Component {
     constructor(props) {
@@ -30,16 +30,6 @@ export default class App extends Component {
             date: '09/12/2016' // not required
         }];
     }
-    
-    componentDidMount() {
-        /* In case you wanna push a notification
-         * without update your component state
-         * you can use the `notify` method.
-         */
-        setTimeout(() => {
-           notify.add({...}); 
-        }, 1000);
-    }
    
     render() {
         return (
@@ -52,8 +42,8 @@ export default class App extends Component {
                      onScrollBottom={() => console.log('You are on the bottom babay :D')}
                      onScroll={() => console.log('You are scrolling on the list')}
                      onItemClick={item => console.log('## item clicked', item)}
-                     onNotificatioOpen={items => console.log('## all notifications', items)}
-                     onNotificatioClose={items => console.log('## all notifications', items)}
+                     onNotificationOpen={items => console.log('## all notifications', items)}
+                     onNotificationClose={items => console.log('## all notifications', items)}
                      onScroll={e => console.log('You are scrolling', e)}
                      customItemComponent={ReactComponent} // In case you don't wanna use the default item component
                </div>
@@ -87,7 +77,7 @@ this.mapDataToItems = {
 Sorry but you cannot map `tags` at the moment :(
 
 #### You still don't get it `o.O`
-In case I fail to explain you on how to set up in your project!
+
 
 ```
 git clone https://github.com/diegoddox/react-notification-center.git 

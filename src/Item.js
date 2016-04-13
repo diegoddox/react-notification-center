@@ -22,7 +22,7 @@ export default class NotificationItem extends Component {
     }
     render() {
         return (
-            <li className={cn('rn-item', {read: this.props[this.props.options.read]})} onClick={this.handleOnClick.bind(this)}>
+            <li className={cn('rn-item', {new: this.props[this.props.options.new]})} onClick={this.handleOnClick.bind(this)}>
                 <p className="short-desc">
                     {this.props.tags && this.props.tags.map((item, i) => <Tag key={i} {...item}>{item.text}</Tag>)}
                     {this.props[this.props.options.title] && <strong className="title">{this.props[this.props.options.title]} </strong>}

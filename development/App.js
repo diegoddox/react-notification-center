@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import loremIpsum from 'lorem-ipsum';
 import moment from 'moment';
 import uiid from 'uuid';
-import ReactNotificationCenter, {notify} from './../src/';
+import ReactNotificationCenter from './../src/';
 
 export default class App extends Component {
     static displayName = 'ReactNotificationDevApp';
@@ -15,7 +15,7 @@ export default class App extends Component {
         this.notificationOptions = {
             id: '__id',
             message: 'text',
-            read: 'active',
+            new: 'active',
             date: 'startDate'
         };
 
@@ -68,19 +68,27 @@ export default class App extends Component {
                 startDate: moment().format('LLL')
             }
         ];
+        this.state = {
+            notifications: this.notifications
+        };
     }
 
     addnotification(tagType) {
-        notify.add({
-            __id: uiid.v1(),
-            title: loremIpsum({count: 1}),
-            text: loremIpsum({count: 6}),
-            active: false,
-            tags: [{
-                type: tagType ? tagType : 'info',
-                text: loremIpsum({count: 1, units: 'words'})
-            }],
-            startDate: moment().format('LLL')
+        this.setState({
+            notifications: [
+                {
+                    __id: uiid.v1(),
+                    title: loremIpsum({count: 1}),
+                    text: loremIpsum({count: 6}),
+                    active: false,
+                    tags: [{
+                        type: tagType ? tagType : 'info',
+                        text: loremIpsum({count: 1, units: 'words'})
+                    }],
+                    startDate: moment().format('LLL')
+                },
+                ...this.state.notifications
+            ]
         });
     }
 
@@ -100,9 +108,9 @@ export default class App extends Component {
                     <div className="menu">
                         <div className="app-notification">
                             <ReactNotificationCenter
-                                notifications={this.notifications}
-                                onNotificatioOpen={() => console.log('Notification has open')}
-                                onNotificatioClose={() => console.log('Notification has close')}
+                                notifications={this.state.notifications}
+                                onNotificationOpen={() => console.log('Notification has open')}
+                                onNotificationClose={() => console.log('Notification has close')}
                                 onItemClick={() => console.log('The item has been clicked')}
                                 onScroll={() => console.log('You are scrolling')}
                                 onScrollBottom={() => console.log('you are on the bottom')}
