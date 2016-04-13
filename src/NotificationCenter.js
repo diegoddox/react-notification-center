@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import cn from 'classnames';
 import {EE} from './emitter';
-import NotificationItem from './NotificationItem';
+import NotificationItem from './Item';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
@@ -174,7 +174,7 @@ export default class ReduxModal extends Component {
 
     render() {
         return (
-            <div className={cn('react-redux-notification', 'light-theme', {hide: !this.props.visible})}>
+            <div className={cn('react-notification-center', 'light-theme', {hide: !this.props.visible})}>
                 <div className={cn('r-notifications-icon', {active: this.getUnreadLength()})} ref="notificationIcon">
                     {this.getUnreadLength() > 0 && this.getUnreadLength()}
                 </div>
