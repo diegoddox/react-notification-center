@@ -47,7 +47,6 @@ export default class App extends Component {
                      onNotificationOpen={items => console.log('## all notifications', items)}
                      onNotificationClose={items => console.log('## all notifications', items)}
                      onScroll={e => console.log('You are scrolling', e)}
-                     customItemComponent={ReactComponent} // In case you don't wanna use the default item component
                </div>
             </div>
         );
@@ -80,7 +79,7 @@ Sorry but you cannot map `tags` at the moment :(
 
 #### You still don't get it `o.O`
 
-
+clone the repo and run a local demo
 ```
 git clone https://github.com/diegoddox/react-notification-center.git 
 cd react-notification-center
@@ -88,7 +87,7 @@ npm install
 npm start
 ```
 
-and take a look at the file `developement/App.js`
+open your browser att `http://localhost:4001` and take a look at the file `developement/App.js`
 
 ### TODO:
 improve documentation.
