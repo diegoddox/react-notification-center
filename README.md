@@ -18,17 +18,19 @@ export default class App extends Component {
     constructor(props) {
         super(props);
 
-        this.notifications = [{
-            id: 1,
-            title: 'some title', // not required
-            message: 'The notification text', 
-            read: false, // if the user has read the notification
-            tags: [{ // not required
-                type: 'success',
-                text: 'text'
-            }],
-            date: '09/12/2016' // not required
-        }];
+        this.state = {
+            notifications = [{
+                id: 1,
+                title: 'some title', // not required
+                message: 'The notification text', 
+                new: false, // if the user has read the notification
+                tags: [{ // not required
+                    type: 'success',
+                    text: 'text'
+                }],
+                date: '09/12/2016' // not required
+            }];
+        };
     }
    
     render() {
@@ -36,7 +38,7 @@ export default class App extends Component {
             <div className="wrapper">
                 <div className="your-notification-holder-class">
 	             <ReactNotificationCenter
-	                 notifications={this.notifications}
+	                 notifications={this.state.notifications}
                      notificationTitle={'React notification center'}
                      noNotificationText={'No notifications. Go home!'}
                      onScrollBottom={() => console.log('You are on the bottom babay :D')}
