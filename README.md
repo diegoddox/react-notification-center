@@ -67,7 +67,7 @@ this.mapDataToItems = {
     id: '_id',
     title: 'name',
     message: 'text',
-    read: 'hasRead',
+    new: 'hasRead',
     date: 'createAt'
 }
 
