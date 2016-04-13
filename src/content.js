@@ -15,13 +15,13 @@ export default class NotificationContent extends Component {
     }
 
     onContentScroll(e) {
-        if (this.props.contentScroll) {
-            this.props.contentScroll(e);
+        if (this.props.onScroll) {
+            this.props.onScroll(e);
         }
 
         if ((e.target.scrollHeight - e.target.scrollTop) == e.target.clientHeight) {
-            if (this.props.scrollOnBottom) {
-                this.props.scrollOnBottom();
+            if (this.props.onScrollBottom) {
+                this.props.onScrollBottom();
             }
         }
     }
