@@ -79,7 +79,7 @@ Sorry but you cannot map `tags` at the moment :(
 
 #### You still don't get it `o.O`
 
-clone the repo and run a local demo
+Clone the repo and run a local demo
 ```
 git clone https://github.com/diegoddox/react-notification-center.git 
 cd react-notification-center
