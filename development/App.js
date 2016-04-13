@@ -68,8 +68,6 @@ export default class App extends Component {
                 startDate: moment().format('LLL')
             }
         ];
-
-        this.fetchData = this.fetchData.bind(this);
     }
 
     addnotification(tagType) {
