@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import cn from 'classnames';
-import {EE} from './emitter';
 import NotificationItem from './Item';
 import Header from './header';
 import Content from './content';
@@ -44,27 +43,10 @@ export default class ReduxnotificationCenter extends Component {
         this.isChildOf = this.isChildOf.bind(this);
         this.mapOptions = this.mapOptions.bind(this);
         this.getUnreadLength = this.getUnreadLength.bind(this);
-        this.renderNotificationItem = this.renderNotificationItem.bind(this);
         this.toggleNotification = this.toggleNotification.bind(this);
     }
 
     componentDidMount() {
-        EE.on('add/notification', (data) => {
-            this.setState({
-                notifications: [
-                    data,
-                    ...this.state.notifications
-                ]
-            });
-        });
-        EE.on('clear/all', () => {
-            this.setState({
-                notifications: [],
-                showNotification: false,
-                current: null
-            });
-        });
-
         if (document) {
             document.addEventListener('click', this.toggleNotification);
         }
@@ -82,8 +64,6 @@ export default class ReduxnotificationCenter extends Component {
     }
 
     componentWillUnmount() {
-        EE.off('add/notification');
-        EE.off('clear/all');
         if (document) {
             document.removeEventListener('click', this.toggleNotification);
         }
@@ -137,7 +117,7 @@ export default class ReduxnotificationCenter extends Component {
         this.setState({
             notifications: this.state.notifications.map(notification => {
                 if (!notification[this.mapOptions().id]) {
-                    console.error('React Notification ERROR: For more information about this issue http://localhost:4001/');
+                    console.error('React Notification ERROR: You need an id');
                     return notification;
                 }
 
@@ -160,18 +140,6 @@ export default class ReduxnotificationCenter extends Component {
         });
     }
 
-    renderNotificationItem(item, i) {
-        if (this.props.customItemComponent) {
-            return <this.props.customItemComponent key={i} {...item} />;
-        }
-        return (
-            <NotificationItem
-                key={i} onClick={this.onItemClick.bind(this, item)}
-                options={this.mapOptions()}
-                {...item}/>
-        );
-    }
-
     render() {
         return (
             <div className={cn('react-notification-center', 'light-theme', {hide: !this.props.visible})}>
@@ -190,7 +158,12 @@ export default class ReduxnotificationCenter extends Component {
                                     {this.state.notifications &&
                                         <ul className="rn-ul">
                                             {this.state.notifications.map((item, i) => {
-                                                return this.renderNotificationItem(item, i);
+                                                return (
+                                                    <NotificationItem
+                                                        key={i} onClick={this.onItemClick.bind(this, item)}
+                                                        options={this.mapOptions()}
+                                                        {...item}/>
+                                                );
                                             })}
                                         </ul>
                                     }
