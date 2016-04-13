@@ -104,6 +104,8 @@ export default class App extends Component {
                                 onNotificatioOpen={() => console.log('Notification has open')}
                                 onNotificatioClose={() => console.log('Notification has close')}
                                 onItemClick={() => console.log('The item has been clicked')}
+                                onScroll={() => console.log('You are scrolling')}
+                                onScrollBottom={() => console.log('you are on the bottom')}
                                 mapToItem={this.notificationOptions}/>
                         </div>
                         <button
