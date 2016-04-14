@@ -120,6 +120,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "element-class": "^0.2.2",
     "eventemitter3": "^1.1.1"
   }
 }

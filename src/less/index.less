@@ -41,6 +41,14 @@
         &:hover {
             transform: scale(1.1);
         }
+        
+        &.pulse {
+            animation-name: pulse_animation;
+            animation-duration: 500ms;
+            transform-origin:70% 70%;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
     }
     
     .rn-header {
@@ -151,4 +159,10 @@
             }   
         }
     }
+}
+
+@keyframes pulse_animation {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.2); }
+	100% { transform: scale(1); }
 }

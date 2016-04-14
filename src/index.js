@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import cn from 'classnames';
+import elementClass from 'element-class';
 import NotificationItem from './Item';
 import Header from './header';
 import Content from './content';
@@ -44,6 +45,7 @@ export default class ReduxnotificationCenter extends Component {
         this.mapOptions = this.mapOptions.bind(this);
         this.getUnreadLength = this.getUnreadLength.bind(this);
         this.toggleNotification = this.toggleNotification.bind(this);
+        this.timeout = null;
     }
 
     componentDidMount() {
@@ -52,18 +54,21 @@ export default class ReduxnotificationCenter extends Component {
         }
     }
 
-    componentDidUpdate() {
-    }
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.notifications.length !== this.state.notifications.length) {
-            this.setState({
-                notifications: nextProps.notifications
-            });
+            elementClass(this.refs.notificationIcon).add('pulse');
+
+            this.timeout = setTimeout(() => {
+                elementClass(this.refs.notificationIcon).remove('pulse');
+            }, 1000);
+            this.setState({notifications: nextProps.notifications});
         }
     }
 
     componentWillUnmount() {
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+        }
         if (document) {
             document.removeEventListener('click', this.toggleNotification);
         }
