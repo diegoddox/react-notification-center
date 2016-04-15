@@ -102,7 +102,7 @@ export default class App extends Component {
                             <img src="http://diegoddox.github.io/react-notification-center/images/demo-icon.png" />
                         </div>
                         <div className="description">
-                            Just include the notificationIcon where you want config it and you're read to go!
+                            Just include the notification-icon where you want config and you're ready to go!
                         </div>
                     </div>
                     <div className="menu">
