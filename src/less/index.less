@@ -44,10 +44,14 @@
         
         &.pulse {
             animation-name: pulse_animation;
-            animation-duration: 500ms;
-            transform-origin:70% 70%;
-            animation-iteration-count: infinite;
+            animation-duration: 300ms;
+            animation-iteration-count: 2;
             animation-timing-function: linear;
+            
+            -webkit-animation-name: webkit_pulse_animation;
+            -webkit-animation-duration: 300ms;
+            -webkit-animation-iteration-count: 2;
+            -webkit-animation-timing-function: linear;
         }
     }
     
@@ -159,6 +163,12 @@
             }   
         }
     }
+}
+
+@-webkit-keyframes webkit_pulse_animation {
+	0% { -webkit-transform: scale(1); }
+	50% { -webkit-transform: scale(1.2); }
+	100% { -webkit-transform: scale(1); }
 }
 
 @keyframes pulse_animation {

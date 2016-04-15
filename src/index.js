@@ -60,7 +60,7 @@ export default class ReduxnotificationCenter extends Component {
 
             this.timeout = setTimeout(() => {
                 elementClass(this.refs.notificationIcon).remove('pulse');
-            }, 1000);
+            }, 1200);
             this.setState({notifications: nextProps.notifications});
         }
     }
@@ -160,18 +160,16 @@ export default class ReduxnotificationCenter extends Component {
                                     {this.state.notifications.length == 0 &&
                                         <div className="no-rn">{this.props.noNotificationText}</div>
                                     }
-                                    {this.state.notifications &&
-                                        <ul className="rn-ul">
-                                            {this.state.notifications.map((item, i) => {
-                                                return (
-                                                    <NotificationItem
-                                                        key={i} onClick={this.onItemClick.bind(this, item)}
-                                                        options={this.mapOptions()}
-                                                        {...item}/>
-                                                );
-                                            })}
-                                        </ul>
-                                    }
+                                    <ul className="rn-ul">
+                                        {this.state.notifications.map((item, i) => {
+                                            return (
+                                                <NotificationItem
+                                                    key={i} onClick={this.onItemClick.bind(this, item)}
+                                                    options={this.mapOptions()}
+                                                    {...item}/>
+                                            );
+                                        })}
+                                    </ul>
                                 </Content>
                                 <Footer></Footer>
                             </div>
