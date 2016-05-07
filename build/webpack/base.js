@@ -3,8 +3,6 @@ var path      = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var config = require('../../config');
 
-const baseSrcPath = path.join(config.path_base, config.dir_client);
-
 module.exports = {
     target: 'web',
     entry: {
