@@ -7,7 +7,7 @@
   "scripts": {
     "start": "better-npm-run dev-server",
     "build:w": "better-npm-run build:w",
-    "build": "better-npm-run build",
+    "build": "better-npm-run build && npm run less && npm run less:m",
     "less": "node_modules/.bin/lessc src/less/index.less --autoprefix=\"last 2 versions\" lib/css/react-redux-notification.css",
     "less:m": "node_modules/.bin/lessc src/less/index.less --autoprefix=\"last 2 versions\" --clean-css lib/css/react-redux-notification.min.css",
     "clean": "better-npm-run clean",
