@@ -24,7 +24,7 @@ class App extends Component {
                 __id: uiid.v1(),
                 title: loremIpsum({count: 1}),
                 text: loremIpsum({count: 3}),
-                active: false,
+                active: true,
                 tags: [{
                     type: 'success',
                     text: loremIpsum({count: 1, units: 'words'})
@@ -34,7 +34,7 @@ class App extends Component {
                 __id: uiid.v1(),
                 title: loremIpsum({count: 1}),
                 text: loremIpsum({count: 6}),
-                active: false,
+                active: true,
                 tags: [{
                     type: 'info',
                     text: loremIpsum({count: 1, units: 'words'})
@@ -50,7 +50,7 @@ class App extends Component {
                 __id: uiid.v1(),
                 title: loremIpsum({count: 1}),
                 text: loremIpsum({count: 6}),
-                active: false,
+                active: true,
                 tags: [{
                     type: 'warning',
                     text: loremIpsum({count: 1, units: 'words'})
@@ -60,7 +60,7 @@ class App extends Component {
                 __id: uiid.v1(),
                 title: loremIpsum({count: 1}),
                 text: loremIpsum({count: 6}),
-                active: false,
+                active: true,
                 tags: [{
                     type: 'danger',
                     text: loremIpsum({count: 1, units: 'words'})
@@ -80,7 +80,7 @@ class App extends Component {
                     __id: uiid.v1(),
                     title: loremIpsum({count: 1}),
                     text: loremIpsum({count: 6}),
-                    active: false,
+                    active: true,
                     tags: [{
                         type: tagType ? tagType : 'info',
                         text: loremIpsum({count: 1, units: 'words'})

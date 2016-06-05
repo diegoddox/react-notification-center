@@ -75,7 +75,7 @@ export default class ReduxnotificationCenter extends Component {
     }
 
     getUnreadLength() {
-        return this.state.notifications.filter(item => !item[this.mapOptions().new]).length;
+        return this.state.notifications.filter(item => item[this.mapOptions().new]).length;
     }
 
     toggleNotification(e) {
@@ -127,7 +127,7 @@ export default class ReduxnotificationCenter extends Component {
                 }
 
                 if (notification[this.mapOptions().id] == item[this.mapOptions().id]) {
-                    notification[this.mapOptions().new] = true;
+                    notification[this.mapOptions().new] = false;
                 }
                 return notification;
             }),
